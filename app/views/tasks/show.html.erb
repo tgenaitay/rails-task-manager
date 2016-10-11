@@ -1,0 +1,11 @@
+<div class="jumbotron text-center">
+<h1><%= @task.name %></h1>
+<p><%= @task.description %></p>
+<hr>
+<p><strong>Done?</strong>
+<input type="radio" class="done" name="done" value="<%=@task.id %>" <% if @task.done == TRUE %>checked="checked"<% end %> /> Yes
+<input type="radio" class="done" name="done" value="<%=@task.id %>"<% if @task.done != TRUE %>checked="checked"<% end %> /> No
+</p>
+<p>Created on: <%= @task.created_at %></p>
+<p><%= link_to "Back to list", tasks_path, class: 'btn btn-default' %></p>
+</div>
